@@ -26,6 +26,7 @@ function chgpage(routerName) {
         <b-nav-item :active="activePath === '/for'" @click="chgpage('for')">v-for</b-nav-item>
         <b-nav-item :active="activePath === '/on'" @click="chgpage('on')">v-on</b-nav-item>
         <b-nav-item :active="activePath === '/bindmodel'" @click="chgpage('bindmodel')">v-bind vs v-model</b-nav-item>
+        <b-nav-item :active="activePath === '/homework'" @click="chgpage('homework')">homework</b-nav-item>
     </b-nav>
     </b-card>
 </template>
