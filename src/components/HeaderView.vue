@@ -25,7 +25,7 @@ function chgpage(routerName) {
         <b-nav-item :active="activePath === '/ifshow'" @click="chgpage('ifshow')">v-if vs v-show</b-nav-item>
         <b-nav-item :active="activePath === '/for'" @click="chgpage('for')">v-for</b-nav-item>
         <b-nav-item :active="activePath === '/on'" @click="chgpage('on')">v-on</b-nav-item>
-        <b-nav-item :active="activePath === 8" @click="chgpage('bindmodel')">v-bind vs v-model</b-nav-item>
+        <b-nav-item :active="activePath === '/bindmodel'" @click="chgpage('bindmodel')">v-bind vs v-model</b-nav-item>
     </b-nav>
     </b-card>
 </template>
