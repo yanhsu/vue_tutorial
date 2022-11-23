@@ -31,4 +31,9 @@ let fruits = ref([
         <h2>v-for with index</h2>
         <p v-for="(item, index) in fruits">{{ index + 1 }}.{{ item.name }} : ${{ item.price }} </p>
     </div>
+
+    <div class="mt-2" style="text-align:center;font-size: x-large;">
+        <h2>v-for with index</h2>
+        <p v-for="num in 10">{{ num }} </p>
+    </div>
 </template>
