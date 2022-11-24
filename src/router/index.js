@@ -9,6 +9,7 @@ import For from '../components/For.vue'
 import BindModel from '../components/BindVsModel.vue'
 import Homework from '../components/Homework.vue'
 import RefvsReactive from '../components/RefvsReactive.vue'
+import Setup from '../components/Setup.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -67,6 +68,11 @@ const router = createRouter({
       path: '/refreactive',
       name: 'refreactive',
       component: RefvsReactive
+    },
+    {
+      path: '/setup',
+      name: 'setup',
+      component: Setup
     }
   ]
 })
