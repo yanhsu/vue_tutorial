@@ -25,7 +25,6 @@ watch(reactive1, (nv, pv) => {
         <span>{{ ref1.name }}</span>
     </div>
 
-    <!-- 由於v-bind 很常使用故提供簡便語法 -->
     <div class="mt-3" style="text-align:center;font-size: x-large;">
         <span>{{ reactive1.name }}</span>
     </div>

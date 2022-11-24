@@ -5,7 +5,7 @@
 
     function changeFromChild(e) {
         console.log('emit value:'+ e)
-        // parentMsg.value = e
+        parentMsg.value = e
     }
 </script>
 

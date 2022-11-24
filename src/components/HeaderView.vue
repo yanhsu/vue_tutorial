@@ -5,7 +5,6 @@ import router from '../router/index'
 
 const route=useRoute();
 const activePath = computed(() =>route.path)
-console.log('path:'+ activePath)
 
 
 function chgpage(routerName) {
@@ -30,6 +29,7 @@ function chgpage(routerName) {
         <b-nav-item :active="activePath === '/refreactive'" @click="chgpage('refreactive')">ref vs reactive</b-nav-item>
         <b-nav-item :active="activePath === '/setup'" @click="chgpage('setup')">setup</b-nav-item>
         <b-nav-item :active="activePath === '/props&emit'" @click="chgpage('props&emit')">props&emit</b-nav-item>
+        <b-nav-item :active="activePath === '/lifecycle'" @click="chgpage('lifecycle')">lifecycle</b-nav-item>
     </b-nav>
     </b-card>
 </template>
