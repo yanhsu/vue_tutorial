@@ -30,6 +30,7 @@ function chgpage(routerName) {
         <b-nav-item :active="activePath === '/setup'" @click="chgpage('setup')">setup</b-nav-item>
         <b-nav-item :active="activePath === '/props&emit'" @click="chgpage('props&emit')">props&emit</b-nav-item>
         <b-nav-item :active="activePath === '/lifecycle'" @click="chgpage('lifecycle')">lifecycle</b-nav-item>
+        <b-nav-item :active="activePath === '/workshop'" @click="chgpage('workshop')">workshop</b-nav-item>
     </b-nav>
     </b-card>
 </template>
