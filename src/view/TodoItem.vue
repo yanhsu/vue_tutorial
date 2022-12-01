@@ -3,9 +3,12 @@
     const { todolist } =defineProps({
         todolist: Array
     });
-    const emit = defineEmits(['changeToggle']);
+    const emit = defineEmits(['changeToggle', 'deleteTodo']);
     function toggleItem(index) {
         emit('changeToggle', index);
+    }
+    function deleteItem(index) {
+        emit('deleteTodo', index)
     }
 </script>
 <template>
@@ -17,6 +20,7 @@
             >
                 {{ `${index + 1}.${item.title}` }}
                 <input type="checkbox" @change="toggleItem(index)">
+                <button @click="deleteItem(index)">刪除</button>
             </li>
         </ul>
     </div>
