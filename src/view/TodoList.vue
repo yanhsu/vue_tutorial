@@ -9,10 +9,17 @@
     }
     function toggleTodo(index) {
         console.log(index);
-        todolist[index].toggle = !todolist[index].toggle
+        todolist[index].toggle = !todolist[index].toggle;
+    }
+    function deleteOne(index) {
+        todolist.splice(index, 1);
     }
 </script>
 <template>
     <AddTodo @addItem="addTodo"/>
-    <TodoItem :todolist="todolist" @changeToggle="toggleTodo"/>
+    <TodoItem 
+        :todolist="todolist" 
+        @changeToggle="toggleTodo"
+        @deleteTodo="deleteOne"
+    />
 </template>
