@@ -6,7 +6,7 @@
     let inputTodo = ref('');
 
     function addInput() {
-        store.dispatch('add', {
+        store.commit('addTodo', {
             obj:{
                 title: inputTodo.value,
                 done: false

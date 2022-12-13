@@ -14,10 +14,10 @@
     // }
     let todolist = computed(() => store.state.todolist)
     function toggleItem(index) {
-        store.dispatch('toggle', { 'index': index})
+        store.commit('toggleTodo', { "index": index})
     }
     function deleteItem(index) {
-        store.dispatch('delete', { 'index': index})
+        store.commit('deleteTodo', { 'index': index})
     }
 </script>
 <template>

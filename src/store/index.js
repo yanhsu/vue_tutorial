@@ -1,7 +1,9 @@
 import {createStore} from "vuex"
 import  axios  from "axios";
+import createPersistedState from "vuex-persistedstate";
 
 const store = createStore({
+    // plugins:[createPersistedState()],
     //狀態儲存庫
     state: {
         todolist: []
@@ -18,7 +20,7 @@ const store = createStore({
 
         },
         toggleTodo: function(state, payload) {
-            state.todolistp[payload.index].done = !state.todolistp[payload.index].done
+            state.todolist[payload.index].done = !state.todolist[payload.index].done
         }
     },
     actions: {
@@ -29,7 +31,13 @@ const store = createStore({
             commit('deleteTodo', payload)
         },
         toggle: function({commit}, payload) {
+            console.log(payload)
             commit('toggleTodo', payload)
+        }
+    },
+    getters: {
+        doneTodolist: function(state) {
+          return state.todolist.filter(todo => todo.done)
         }
     }
 })

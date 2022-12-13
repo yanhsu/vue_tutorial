@@ -13,6 +13,7 @@ import Setup from '../components/Setup.vue'
 import Parent from '../components/Parent.vue'
 import LifeCycle from '../components/LifeCycle.vue'
 import Workshop from  '../view/TodoList.vue'
+import RouteDemo from '../components/RouteDemo.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -91,6 +92,16 @@ const router = createRouter({
       path: '/workshop',
       name: 'workshop',
       component: Workshop
+    },
+    {
+      path: '/routedemo1',
+      name: 'routedemo1',
+      component: RouteDemo
+    },
+    {
+      path: '/routedemo2/:id',
+      name: 'routedemo2',
+      component: RouteDemo
     }
   ]
 })

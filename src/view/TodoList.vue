@@ -4,7 +4,11 @@
     import AddTodo from './AddTodo.vue';
     import { useStore } from 'vuex'
     const store = useStore();
-    let todolist = computed(() => store.todolist);
+    let todolist = computed(
+        function () {
+            return state.todolist
+        }
+    );
     // let todolist = reactive([]);
     // function addOne(obj) {
     //     console.log(obj);
