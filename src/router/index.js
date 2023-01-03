@@ -25,7 +25,10 @@ const router = createRouter({
       path: '/hello',
       name: 'hello',
       component: HelloWorld,
-      root: true
+      root: true,
+      beforeEnter:(to, from) => {
+        console.log(from.name);
+      }
     },
     {
       path: '/bind',
@@ -94,5 +97,22 @@ const router = createRouter({
     }
   ]
 })
-
+//不可從 bind 跳轉至 if
+router.beforeEach((to, from) => {
+  if(from.name == 'bind' && to.name == 'if') {
+    return false
+  } 
+  else {
+    return true
+  }
+})
+// 從 workshop 跳轉至lifecycle 時轉導至 hello 一定要給一個next callback 不然路由會中斷
+router.beforeEach((to, from) => {
+  if(from.name == 'workshop' && to.name == 'lifecycle') {
+    return {name: 'hello'}
+  } 
+})
+router.afterEach((to, from, failure) => {
+  console.log(to.name);
+})
 export default router
