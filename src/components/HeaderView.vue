@@ -17,7 +17,9 @@ function chgpage(routerName) {
 <template>
     <b-card>
     <b-nav pills>
-        <b-nav-item :active="activePath === '/hello'" @click="chgpage('hello')">hello</b-nav-item>
+        <router-link :to="{name:'hello'}">
+            <b-nav-item :active="activePath === '/hello'" >hello</b-nav-item>
+        </router-link>
         <b-nav-item :active="activePath === '/bind'" @click="chgpage('bind')">v-bind</b-nav-item>
         <b-nav-item :active="activePath === '/if'" @click="chgpage('if')">v-if</b-nav-item>
         <b-nav-item :active="activePath === '/show'" @click="chgpage('show')">v-show</b-nav-item>
@@ -31,7 +33,10 @@ function chgpage(routerName) {
         <b-nav-item :active="activePath === '/props&emit'" @click="chgpage('props&emit')">props&emit</b-nav-item>
         <b-nav-item :active="activePath === '/lifecycle'" @click="chgpage('lifecycle')">lifecycle</b-nav-item>
         <b-nav-item :active="activePath === '/workshop'" @click="chgpage('workshop')">workshop</b-nav-item>
-        <b-nav-item :active="activePath === '/workshop'" @click="chgpage('routedemo1')">routedemo1</b-nav-item>
+        <b-nav-item :active="activePath === '/routedemo1'" @click="chgpage('routedemo1')">routedemo1</b-nav-item>
+        <router-link :to="{name:'routedemo2', params: { id: 'zzz'}}">
+            <b-nav-item :active="activePath === '/routedemo2'" >routedemo with zzz</b-nav-item>
+        </router-link>
     </b-nav>
     </b-card>
 </template>

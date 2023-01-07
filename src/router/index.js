@@ -106,4 +106,10 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to, from) => {
+  if(to.name === 'on' && from.name === 'for') {
+    return false;
+  }
+});
+
 export default router

@@ -1,14 +1,34 @@
 <script setup>
-    import { reactive, computed } from 'vue';
+    import { reactive, computed, onMounted } from 'vue';
     import TodoItem from './TodoItem.vue';
     import AddTodo from './AddTodo.vue';
     import { useStore } from 'vuex'
     const store = useStore();
-    let todolist = computed(
-        function () {
-            return state.todolist
+    let todolist = computed(() => store.todolist);
+    let today = new Date(
+    new Date().getTime() - new Date().getTimezoneOffset() * 60 * 1000
+  );
+    const request = {
+        header:{
+            msgNo: "UP0090_02_20221209134638_01882",
+            txnCode: 'getDataDictionaries',
+            txnTime: today.toISOString().replace("T", " ").slice(0, 19),
+            senderCode: "UP0090_02",
+            receiverCode: "UP0090_01",
+            operatorCode: "19598", 
+            unitCode: "9004",
+            authorizerCode: "19598", 
+        },
+        requestBody: {
+
         }
-    );
+    };
+    const headers = {
+        "Content-Type": "application/json;charset=utf-8",
+    };
+    onMounted(()=> {
+        store.dispatch('getDataDictionary', {request,headers})
+    })
     // let todolist = reactive([]);
     // function addOne(obj) {
     //     console.log(obj);

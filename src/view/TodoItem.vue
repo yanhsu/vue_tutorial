@@ -12,12 +12,16 @@
     // function deleteItem(index) {
     //     emit('deleteTodo', index);
     // }
-    let todolist = computed(() => store.state.todolist)
+    let todolist = computed({
+        get: function() {
+            return store.state.todolist
+        }
+    })
     function toggleItem(index) {
-        store.commit('toggleTodo', { "index": index})
+        store.dispatch('toggle', { index })
     }
     function deleteItem(index) {
-        store.commit('deleteTodo', { 'index': index})
+        store.dispatch('delete', { index })
     }
 </script>
 <template>

@@ -6,7 +6,8 @@ const store = createStore({
     // plugins:[createPersistedState()],
     //狀態儲存庫
     state: {
-        todolist: []
+        todolist: [],
+        dataDictionary:[]
     },
     mutations: {
         addTodo: function(state, payload) {
@@ -21,6 +22,9 @@ const store = createStore({
         },
         toggleTodo: function(state, payload) {
             state.todolist[payload.index].done = !state.todolist[payload.index].done
+        },
+        addDataDictionary(state, payload) {
+            state.dataDictionary = payload.resultBody
         }
     },
     actions: {
@@ -33,6 +37,15 @@ const store = createStore({
         toggle: function({commit}, payload) {
             console.log(payload)
             commit('toggleTodo', payload)
+        },
+        getDataDictionary: async function({commit}, {request,headers}) {
+            try {
+                let res = await axios.post('/api', JSON.stringify(request), { "headers":headers });
+                console.log(res);
+                commit('addDataDictionary', res.data);
+            } catch(err) {
+                console.log(err)
+            }
         }
     },
     getters: {
